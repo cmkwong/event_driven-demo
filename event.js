@@ -1,8 +1,18 @@
+// https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/learn/lecture/15064750?start=19#notes
+
 const EventEmitter = require("events");
 
-const myEmitter = new EventEmitter();
+// inherited the class EventEmitter
+// https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/learn/lecture/15064750?start=441#notes
+class Sales extends EventEmitter {
+  constructor() {
+    super();
+  }
+}
 
-// Oberserver
+const myEmitter = new Sales();
+
+// Observer
 myEmitter.on("newSale", () => {
   console.log("There was a new sale!");
 });
